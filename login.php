@@ -1,13 +1,39 @@
 <?php
-    if(isset($_POST["login"])) {
-        $username = $_POST["username"];
-        $password = $_POST["password"];
+//     if(isset($_POST["login"])) {
+//         $username = $_POST["username"];
+//         $password = $_POST["password"];
 
-        if($username == 'Wahidbayarutang' && $password == '123') {
-            header('location: admin.php');
-            exit;
-        }
+//         if($username == 'Wahidbayarutang' && $password == '123') {
+//             header('location: admin.php');
+//             exit;
+//         }elseif ($username === '' && $password == '') {
+//             header('location:index.php');
+//             exit;
+//     }
+//     else {
+//         // echo "<script>alert('username atau password salah!');</script>";
+//     }
+// }
+
+if (isset($_POST["login"])) {
+    $username = trim($_POST["username"]);
+    $password = trim($_POST["password"]);
+
+    // Validasi input kosong
+    if (empty($username) || empty($password)) {
+        echo "<script>alert('Username dan Password tidak boleh kosong!');</script>";
+    } 
+    // Login Admin
+    elseif ($username === 'Wahidbayarutang' && $password === '123') {
+        header('Location: admin.php'); // Arahkan ke admin.php
+        exit;
+    } 
+    // Login User (Default ke index.php)
+    else {
+        header('Location: index.php'); // Arahkan ke index.php
+        exit;
     }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,10 +51,6 @@
         <label for="password">Password</label>
         <input type="password" name="password" id="password" placeholder="yaha bayar dulu..." ><br><br>
         <button type="submit" name="login" onclick="return confirm('yakin sudah siap dengan bayaran')">Login</button>
-        <?php if(isset($_POST['login'])){ 
-            header('location:index.php');
-        }
-        ?>
     </form> 
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 require 'settings.php';
 $file = 'simpan_data.json';
 $datapeminjam = fungsi::bacadata($file);
@@ -10,8 +10,8 @@ $datapeminjam = fungsi::bacadata($file);
 // }
 
 // Ambil pesan jika ada
-$message = $_SESSION['message'] ?? '';
-unset($_SESSION['message']); // Hapus pesan yang sudah ditampilkan
+// $message = $_SESSION['message'] ?? '';
+// unset($_SESSION['message']); // Hapus pesan yang sudah ditampilkan
 
 ?>
 
