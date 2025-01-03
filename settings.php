@@ -42,6 +42,10 @@ class fungsi {
 }
 
 
+    if(empty($databaru['id']) || empty($databaru['nama']) || empty($databaru['email']) || empty($databaru['uang']) || empty($databaru['tanggal'])) {
+        echo "<script>alert('isi data lu harus lengkap dulu lu ege!, lu kira minjem duit gampang?')</script>";
+    }
+
     //Tambah data baru
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $databaru = [

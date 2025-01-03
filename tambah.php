@@ -27,7 +27,10 @@ $file = 'simpan_data.json';
     <button type="submit" name="submit">Kirim ege!</button>
         <?php if(isset($_POST['submit'])) {
             header('location: index.php') ;
-        } ?>
+        } 
+        echo "<script>alert('yakin lu nambah utang lagi nieh...?');</script>"
+        ?>
+        <script>alert('hadeuh yah malah nambah utang lagi...');</script>
     </form>
 </body>
 </html>
